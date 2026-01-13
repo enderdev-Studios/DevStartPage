@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@tailwind utilities;
+@import "./theme.css";
+
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+    transition: background-color 3s, color 0.3s;
+}
+
+ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 8px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: #202230;
+    border-radius: 8px;
+}
+
+.dark ul::-webkit-scrollbar-thumb {
+    background: #232324;
+}
+
+.dark ul::-webkit-scrollbar-track {
+    background: #60606d;
+}
+
+
+/* Usual Colors */
+/* Dark -> Catpuccin Mocha */
+/* Light -> Catpuccin Latte */
+
+@layer utilities {
+    .background-base {
+        @apply dark:bg-base-mocha bg-base-latte;
+    }
+    .background-crust {
+        @apply dark:bg-crust-mocha bg-crust-latte;
+    }
+    .background-mantle {
+        @apply dark:bg-mantle-mocha bg-mantle-latte;
+    }
+    .surface-0 {
+        @apply dark:bg-surface-mocha-0 bg-surface-latte-0;
+    }
+    .surface-1 {
+        @apply dark:bg-surface-mocha-1 bg-surface-latte-1;
+    }
+    .surface-2 {
+        @apply dark:bg-surface-mocha-2 bg-surface-latte-2;
+    }
+    .text {
+        @apply dark:text-text-mocha-0 text-[#4c4f69]
+    }
+    .subtext-0 {
+        @apply dark:text-subtext-mocha-0 text-subtext-latte-0
+    }
+    .subtext-1 {
+        @apply dark:text-subtext-mocha-1 text-subtext-latte-1
+    }
+}

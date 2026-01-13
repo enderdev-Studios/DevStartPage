@@ -19,7 +19,7 @@ export default function WeatherWidget({ city }: { city: string }) {
     return (
         <span className="flex items-center gap-2 max-md:hidden">
             <WeatherImage WeatherData={weatherData} />
-            {temperature}°C
+            <span className='font-extrabold'>{temperature} °C</span>
         </span>
     );
 }

@@ -54,21 +54,21 @@ export default function Docs({ }) {
   return (
     <div className="relative left-0.5 top-0 w-68 rounded-2xl m-4 select-none max-md:hidden">
       <div
-        className="flex items-center dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] px-3 py-3 rounded-lg cursor-pointer "
+        className="flex items-center subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 px-3 py-3 rounded-lg cursor-pointer "
         onClick={() => setState(!state)}
       >
         <span className="text-lg">
           <i className="bx bxs-book-open"></i>&nbsp;Docs
         </span>
         <ul
-          className={`h-84 overflow-y-auto absolute top-full left-0 mt-1 dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] rounded-lg p-2  ${DropdownClass}`}
+          className={`h-84 overflow-y-auto absolute top-full left-0 mt-1 background-crust rounded-lg p-2  ${DropdownClass}`}
         >
           {docs.map((doc: any, index: any) => (
             <Links key={index} name={doc.name} url={doc.url} Onclick={(e: any) => deleteDoc(e, index)}/>
           ))}
           <li className="w-full text-left p-1 rounded mt-1">
             <input
-              className="w-full text-left p-1 rounded hover:outline-gray-600 "
+              className="w-full text-left p-1 rounded focus:border-b-2 focus:border-[#7c7f93] outline-0"
               placeholder="+ Add New Doc"
               onClick={handleInputClick}
               onKeyDown={OnkeyDown}

@@ -16,13 +16,13 @@ export default function Config({ Submit, onWeatherSubmit }: ConfigProps) {
   return (
     <div className="relative left-0.5 top-0 w-60 rounded-2xl m-4 select-none max-md:hidden">
       <div
-        className="flex items-center dark:bg-[#181825] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#e6e9ef]  px-3 py-3 rounded-lg cursor-pointer dark:hover:outline-gray-300 hover:outline-gray-800 hover:outline-1"
+        className="flex items-center px-3 py-3 rounded-lg cursor-pointer subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0"
         onClick={() => setState(!state)}
       >
         <span className="text-lg font-bold">
           <i className="bx bxs-cog"></i>&nbsp;Configuration
         </span>
-        <ul className={`dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] h-84 overflow-y-auto absolute top-full right-0 mt-1 rounded-lg p-2 w-96 ${DropdownClass} z-50 shadow-lg`} >
+        <ul className={`background-crust/50 text h-84 overflow-y-auto absolute top-full right-0 mt-1 rounded-lg p-2 w-96 ${DropdownClass} z-50 shadow-lg`} >
           <Section title="Weather Config">
             <WeatherConfig onWeatherSubmit={onWeatherSubmit} />
           </Section>

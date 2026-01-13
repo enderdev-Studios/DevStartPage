@@ -24,7 +24,7 @@ export default function ChangeTheme() {
         setTheme(prevtheme => prevtheme === "dark" ? "light" : "dark")
     }
     return (
-        <button className="dark:bg-[#181825] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#e6e9ef] py-3.5 px-4 cursor-pointer rounded-xl font-bold" onClick={handleChange}>
+        <button className="subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 py-3.5 px-4 cursor-pointer rounded-xl font-bold" onClick={handleChange}>
             <i className={theme === "dark" ? 'bx bx-moon' : "bx bx-sun"} ></i>
             &nbsp;
             {theme === "dark" ? "Dark" : "Light"} Theme

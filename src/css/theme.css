@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+    /*  Mocha Colors */
+    
+    /*  Base Colors */
+    --color-base-mocha: #1e1e2e;
+    --color-crust-mocha: #11111b;
+    --color-mantle-mocha: #181825;
+
+    /* Surface Colors */
+    
+    --color-surface-mocha-0: #313244;
+    --color-surface-mocha-1: #45475a;
+    --color-surface-mocha-2: #585b70;
+    
+    /* Text Colors */
+    
+    --color-text-mocha-0: #cdd6f4;
+    --color-subtext-mocha-0: #a6adc8;
+    --color-subtext-mocha-1: #bac2de;
+    
+    /* Overlay Colors */
+    
+    --color-overlay-mocha-0: #6c7086;
+    --color-overlay-mocha-1: #7f849c;
+    --color-overlay-mocha-2: #9399b2;
+    
+    /*  Colors */
+    
+    --color-blue-mocha-0: #89b4fa;
+    --color-blue-mocha-1: #6ca0f5;
+    
+    
+    /* Latte Colors */
+    
+    /* Base Colors */
+    --color-base-latte: #eff1f5;
+    --color-crust-latte: #dce0e8;
+    --color-mantle-latte: #e6e9ef;
+    
+    
+    
+    /* Surface Colors */
+    
+    --color-surface-latte-0: #ccd0da;
+    --color-surface-latte-1: #bcc0cc;
+    --color-surface-latte-2: #acb0be;
+    
+    /* Text Colors */
+    
+    --color-text-latte-0: #4c4f69;
+    --color-subtext-latte-0: #6c6f85;
+    --color-subtext-latte-1: #5c5f77;
+    
+    /* Overlay Colors */
+    
+    --color-overlay-latte-0: #9ca0b0;
+    --color-overlay-latte-1: #8c8fa1;
+    --color-overlay-latte-2: #7c7f93;
+    
+    /*  Colors */
+    
+    --color-blue-latte-0: #1e66f5;
+    --color-blue-latte-1: #1c56c9;
+
+    
+}

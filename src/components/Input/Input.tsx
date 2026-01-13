@@ -20,13 +20,13 @@ export default function Input() {
   
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full select-none mr-4 ">
+    <div className="flex flex-col items-center justify-center w-full h-full select-none mr-4">
       <div className="flex items-center w-full max-w-2xl">
         
         <DropDown setSearchEngine={setSearchEngine} SearchEngine={SearchEngine}/>
         <input
           type="text"
-          className="flex-1 focus:outline-0  p-2 py-3 rounded-r-3xl dark:bg-[#11111b] bg-[#dce0e8] h-12 dark:text-[#cdd6f4] text-[#4c4f69]"
+          className="flex-1 focus:outline-0  p-2 py-3 rounded-r-3xl surface-0 h-12 text"
           placeholder="🔎   Search or type a URL"
           onKeyDown={OnkeyDown}
         />
