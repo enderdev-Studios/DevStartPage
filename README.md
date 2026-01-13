@@ -1,16 +1,16 @@
-# [Dev New Tab](https://dev-start-page.vercel.app/)
+<div align="center">
+    <img src="./public/IconSvg.svg" alt="Dev New Tab Logo" width="128"/>
+    <h3><a href="https://dev-start-page.vercel.app/">Dev New Tab</a></h3>
+    <p>A customizable start page for developers.</p>
+    <img src="https://img.shields.io/github/stars/enderdev-Studios/DevStartPage?style=social" alt="GitHub stars"/>
+</div >
+
+### Welcome to repository of Dev New Tab!
+
+Well just a simple page to customize a little things (also you can copy this and make your own start page). or simply use it as your new tab page. xd
+
+Also this image is for simple demo of how it looks: 
 
 ![Dev New Tab](./public/Demo.png)
 
-### ***Hi everyone and welcome to Dev New Tab!***
-
-Dev New Tab is a customizable start page for developers, designed to enhance productivity and provide quick access to essential tools and information. With features like weather updates, a to-do list, and personalized greetings, Dev New Tab aims to create an efficient and user-friendly experience for developers every time they open a new tab in their browser.
-
-Or is the try the thing XD
-
-Feautures include:
-- Weather Widget
-- Engine Selector
-- Docs Displayer
-
-Enjoy!
+***Enjoy! | [enderdevStudios](https://discord.com/invite/pchahTHgwP)***

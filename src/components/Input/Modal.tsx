@@ -15,7 +15,7 @@ export default function Modal({ state, onSubmit, onClick }: { state: boolean, on
                         <label className="text-lg">Nombre:</label>
                         <input type="text" name="name" placeholder="Google" className="mb-2 p-2 rounded text m-2 outline-0 focus:border-b-2 focus:border-b-overlay-latte-0" required autoComplete="off" />
                         <label className="text-lg">URL</label>
-                        <input type="text" name="url" placeholder="https://google.com" className="mb-2 p-2 rounded text-[#5c5f77] dark:text-[#a6adc8] m-2 outline-0 focus:border-b-2 focus:border-[#7c7f93]" required autoComplete="off" />
+                        <input type="text" name="url" placeholder="https://google.com" className="mb-2 p-2 rounded subtext-1 m-2 outline-0 focus:border-b-2 focus:border-[#7c7f93]" required autoComplete="off" />
                         <button type="submit" className="dark:bg-blue-mocha-0 dark:hover:bg-blue-mocha-1 bg-blue-latte-0 hover:bg-blue-latte-1 text font-bold py-1 px-2 rounded mt-2 cursor-pointer">Create</button>
                     </form>
                 </div>
