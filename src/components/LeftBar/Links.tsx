@@ -10,7 +10,7 @@ export default function Link({ name, url, Onclick }: { name: string, url: string
                 <img src={iconUrl} alt="" width={16} height={16} className="rounded-sm"/>
                 {name}
             </a>
-            <button onClick={Onclick} className="cursor-pointer hover:outline-gray-200 hover:outline-1 ml-3"><i className='bx bx-trash'></i></button>
+            <button onClick={Onclick} className="cursor-pointer hover:outline-gray-200 hover:outline-0 ml-3"><i className='bx bx-x'></i></button>
             </div>
         </li>
     );

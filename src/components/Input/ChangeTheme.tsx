@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { LocalStorageKeys } from "../../constants/constants";
-import ConfigButton from "./ButtonConfig";
 
 export default function ChangeTheme() {
     const [theme, setTheme] = useState(() => {
@@ -25,13 +24,11 @@ export default function ChangeTheme() {
         setTheme(prevtheme => prevtheme === "dark" ? "light" : "dark")
     }
     return (
-        <li className="w-full text-left p-1 rounded mt-1">
-            <h6 className="text-lg font-bold">Theme Config</h6>
-            <ConfigButton props={{ onClick: handleChange }}>
-                <i className={theme === "dark" ? 'bx bx-moon' : "bx bx-sun"} ></i>
-                &nbsp;
-                {theme === "dark" ? "Dark" : "Light"} Theme
-            </ConfigButton>
-        </li>
+        <button className="dark:bg-[#181825] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#e6e9ef] py-3.5 px-4 cursor-pointer rounded-xl font-bold" onClick={handleChange}>
+            <i className={theme === "dark" ? 'bx bx-moon' : "bx bx-sun"} ></i>
+            &nbsp;
+            {theme === "dark" ? "Dark" : "Light"} Theme
+        </button>
+
     );
 };

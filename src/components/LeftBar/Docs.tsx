@@ -54,24 +54,25 @@ export default function Docs({ }) {
   return (
     <div className="relative left-0.5 top-0 w-68 rounded-2xl m-4 select-none max-md:hidden">
       <div
-        className="flex items-center dark:bg-gray-900 bg-gray-300 dark:text-white text-gray-900  px-3 py-3 rounded-lg cursor-pointer dark:hover:outline-gray-300 hover:outline-gray-600 hover:outline-1"
+        className="flex items-center dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] px-3 py-3 rounded-lg cursor-pointer "
         onClick={() => setState(!state)}
       >
         <span className="text-lg">
           <i className="bx bxs-book-open"></i>&nbsp;Docs
         </span>
         <ul
-          className={`h-84 overflow-y-auto absolute top-full left-0 mt-1 dark:bg-gray-900 dark:text-white text-gray-800 bg-gray-300 rounded-lg p-2 w-full ${DropdownClass} z-50 shadow-lg`}
+          className={`h-84 overflow-y-auto absolute top-full left-0 mt-1 dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] rounded-lg p-2  ${DropdownClass}`}
         >
           {docs.map((doc: any, index: any) => (
             <Links key={index} name={doc.name} url={doc.url} Onclick={(e: any) => deleteDoc(e, index)}/>
           ))}
           <li className="w-full text-left p-1 rounded mt-1">
             <input
-              className="w-full text-left p-1 rounded hover:outline-gray-600"
+              className="w-full text-left p-1 rounded hover:outline-gray-600 "
               placeholder="+ Add New Doc"
               onClick={handleInputClick}
               onKeyDown={OnkeyDown}
+              autoComplete="off"
             />
           </li>
         </ul>

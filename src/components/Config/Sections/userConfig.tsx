@@ -1,4 +1,4 @@
-import ConfigButton from "./ButtonConfig";
+import ConfigButton from "../ButtonConfig";
 
 export default function UserConfig({ onSubmit }: { onSubmit: (e: any) => void }) {
  
@@ -10,12 +10,11 @@ export default function UserConfig({ onSubmit }: { onSubmit: (e: any) => void })
   return (
     <li className="w-full text-left p-1 rounded mt-1">
       <form className="flex flex-col m-3" onSubmit={(e) => onSubmit(e)}>
-        <label className="text-lg">Username</label>
         <input
           type="text"
           name="username"
-          placeholder="Example: enderdev, Justevil, marcrock22"
-          className="mb-2 p-2 rounded"
+          placeholder="enderdev, marcrock22"
+          className="mb-2 p-2 rounded focus:border-b-2 focus:border-[#7c7f93] outline-0" 
           required
           onClick={handleClick}
         />

@@ -5,6 +5,7 @@ import Docs from "./components/LeftBar/Docs"
 import Welcome from "./components/LeftBar/Welcome"
 import { useState } from "react"
 import { LocalStorageKeys } from "./constants/constants"
+import ChangeTheme from "./components/Input/ChangeTheme"
 
 function App() {
   const [user, SetUsername] = useState(() => {
@@ -41,7 +42,8 @@ function App() {
           <Welcome city={location}>{user}</Welcome>
         </div>
 
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 flex items-center gap-2">
+          <ChangeTheme />
           <Config Submit={onSubmit} onWeatherSubmit={onWeatherSubmit} />
         </div>
       </div>
