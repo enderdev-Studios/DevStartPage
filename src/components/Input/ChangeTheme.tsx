@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { LocalStorageKeys } from "../../constants/constants";
+import { useMobile } from "../../Hooks/useMobile";
 
 export default function ChangeTheme() {
+    const isMobile = useMobile()
     const [theme, setTheme] = useState(() => {
         const storedTheme = localStorage.getItem(LocalStorageKeys.Theme);
         if (storedTheme) return storedTheme;
@@ -24,10 +26,9 @@ export default function ChangeTheme() {
         setTheme(prevtheme => prevtheme === "dark" ? "light" : "dark")
     }
     return (
-        <button className="subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 py-3.5 px-4 cursor-pointer rounded-xl font-bold" onClick={handleChange}>
+        <button className="subtext-1 surface-0 changeTheme" onClick={handleChange}>
             <i className={theme === "dark" ? 'bx bx-moon' : "bx bx-sun"} ></i>
-            &nbsp;
-            {theme === "dark" ? "Dark" : "Light"} Theme
+            {!isMobile ? <span> &nbsp; {theme === "dark" ? "Dark" : "Light"} Theme </span> : null }
         </button>
 
     );

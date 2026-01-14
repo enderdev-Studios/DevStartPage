@@ -1,0 +1,32 @@
+@import "tailwindcss"
+@tailwind utilities;
+
+@layer utilities {
+    .changeTheme {
+        @apply dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 py-3.5 px-4 cursor-pointer rounded-xl font-bold;
+    }
+    .dropdownEngines {
+        @apply flex items-center  px-3 py-3 max-md:py-0 rounded-l-lg cursor-pointer dark:hover:outline-gray-300 hover:outline-gray-600 hover:outline-1;
+    }
+    .engine {
+        @apply w-full text-left p-1 rounded flex items-center gap-2 ;
+    }
+    .dropmenu {
+        @apply absolute top-full left-0 mt-1 dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] rounded-lg p-2 w-full z-50 shadow-lg;
+    }
+    .inputContainer {
+        @apply flex flex-col items-center justify-center w-full h-full select-none mr-4;
+    }
+    .itemsContainer {
+        @apply flex items-center w-full max-w-2xl;
+    }
+    .shortcut {
+        @apply dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 h-28 w-24 rounded-lg relative dark:text-[#cdd6f4] text-[#4c4f69] hover:dark:text-blue-mocha-0 hover:text-blue-latte-0 max-md:h-20 max-md:w-20 
+    }
+    .shortCutBtn {
+        @apply dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 font-bold py-1 px-2 cursor-pointer h-28 w-24 rounded-lg relative select-none max-md:h-20 max-md:w-20;
+    }
+    .modal {
+        @apply relative rounded-xl inset-0 h-max w-96 m-2 ml-32 p-3 max-md:ml-16 max-md:mr-16;
+    }
+}

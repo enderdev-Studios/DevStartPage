@@ -17,9 +17,9 @@ export default function WeatherWidget({ city }: { city: string }) {
     const temperature = weatherData?.current?.temperature_2m ?? 'N/A';
 
     return (
-        <span className="flex items-center gap-2 max-md:hidden">
+        <span className="flex items-center gap-2 ">
             <WeatherImage WeatherData={weatherData} />
-            <span className='font-extrabold'>{temperature} °C</span>
+            <span className='font-extrabold max-md:text-xs max-md:font-medium'>{temperature} °C</span>
         </span>
     );
 }

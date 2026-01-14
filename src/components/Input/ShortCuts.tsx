@@ -3,6 +3,7 @@ import Shortcut from "./ShortCut";
 import Modal from "./Modal";
 import type { ShortCutType } from "../../types";
 import { LocalStorageKeys } from "../../constants/constants";
+import { useMobile } from "../../Hooks/useMobile";
 
 export default function ShortCuts() {
   // States 
@@ -49,19 +50,23 @@ export default function ShortCuts() {
     window.localStorage.setItem(LocalStorageKeys.ShortCuts, JSON.stringify(updatedShortcuts));
   }
 
+  const isMobile = useMobile()
+
 
   return (
-    <div className="mt-6 flex flex-col items-center justify-center text-white max-md:hidden">
-      <div className="mt-4 grid grid-cols-4 gap-4">
+    <div className="mt-4 flex flex-col items-center justify-center max-md:left-6">
+      <div className="mt-4 flex-wrap justify-center grid grid-cols-4 max-md:grid-cols-2 gap-4">
         {shortcuts.map((shortcut, index) => (
           <Shortcut url={shortcut.url} name={shortcut.name} key={index} Onclick={() => deleteShortcut(index)}></Shortcut>
         ))}
+
         <button onClick={Onclick} className={
-          shortcuts.length >= 8 ? "hidden" : 
-          "subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 font-bold py-1 px-2 cursor-pointer h-28 w-24 rounded-lg relative select-none"}>
-          <span className="text-3xl">+</span>
+          shortcuts.length >= (isMobile ? 4 : 8) ? "hidden" : 
+          "subtext-1 surface-0 shortCutBtn"}>
+          <span className="text-3xl max-md:text-base">+</span>
           <br />
-          Add Shortcut
+          <span className="max-md:text-xs">Add Shortcut</span>
+          
         </button>
         
       </div>

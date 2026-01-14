@@ -1,21 +1,22 @@
 import { useState } from "react";
 import DuckSvg from "../../assets/iconsEngines/DuckDuckgo";
 import EcosiaSVG from "../../assets/iconsEngines/Ecosia";
+import { useMobile } from "../../Hooks/useMobile";
 
 export default function DropDown({ setSearchEngine, SearchEngine }: { setSearchEngine: any, SearchEngine: any }) {
     const [state, setState] = useState(true);
     const DropdownClass = state ? "hidden" : "block";
-    
+    const isMobile = useMobile()
     return (
         <div className="relative">
-            <div className="flex items-center surface-0 text px-3 py-3 max-md:py-0 rounded-l-lg cursor-pointer dark:hover:outline-gray-300 hover:outline-gray-600 hover:outline-1" onClick={() => setState(!state)}>
-                <span className="mr-2">Engine: <span className="font-bold dark:text-blue-mocha-0 text-blue-latte-0">{SearchEngine}</span></span>
-                <ul className={`absolute top-full left-0 mt-1 dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] rounded-lg p-2 w-full ${DropdownClass} z-50 shadow-lg`}>
-                    <li><button className="w-full text-left p-1 rounded flex items-center gap-2" onClick={() => setSearchEngine("Google")}><i className='bx bxl-google' ></i>&nbsp; Google</button></li>
-                    <li><button className="w-full text-left p-1 rounded flex items-center gap-2" onClick={() => setSearchEngine("Bing")}><i className='bx bxl-bing' ></i>&nbsp; Bing</button></li>
-                    <li><button className="w-full text-left p-1 rounded flex items-center gap-2" onClick={() => setSearchEngine("DuckDuckGo")}><DuckSvg />DuckDuckGo</button></li>
-                    <li><button className="w-full text-left p-1 rounded flex items-center gap-2" onClick={() => setSearchEngine("Yahoo")}><i className='bx bxl-yahoo' ></i>&nbsp; Yahoo</button></li>
-                    <li><button className="w-full text-left p-1 rounded flex items-center gap-2" onClick={() => setSearchEngine("Ecosia")}><EcosiaSVG />&nbsp; Ecosia</button></li>
+            <div className="surface-0 text dropdownEngines" onClick={() => setState(!state)}>
+                <span className="mr-2 max-md:text-sm max-md:my-1 max-md:mr-0.5">Engine: <span className="font-bold dark:text-blue-mocha-0 text-blue-latte-0">{SearchEngine}</span></span>
+                <ul className={`dropmenu ${DropdownClass}`}>
+                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Google")}>{!isMobile ? <i className='bx bxl-google' >&nbsp;</i> : null}Google</button></li>
+                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Bing")}>{!isMobile ? <i className='bx bxl-bing' >&nbsp;</i> : null}Bing</button></li>
+                    <li><button className="engine max-md:text-xs" onClick={() => setSearchEngine("DuckDuckGo")}><DuckSvg />DuckDuckGo</button></li>
+                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Yahoo")}>{!isMobile ? <i className='bx bxl-yahoo' >&nbsp;</i> : null} Yahoo</button></li>
+                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Ecosia")}><EcosiaSVG />&nbsp;Ecosia</button></li>
                 </ul>
             </div>
         </div>

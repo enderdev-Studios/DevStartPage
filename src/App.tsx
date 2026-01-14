@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <div className="m-4 mb-12 ">
+      <div className="m-4 mb-12">
         <div className="flex items-center space-x-2 px-3 py-1 rounded-full w-fit ">
           <Docs></Docs>
           <Welcome city={location}>{user}</Welcome>

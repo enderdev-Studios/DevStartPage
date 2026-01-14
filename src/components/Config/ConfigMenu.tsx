@@ -3,6 +3,7 @@ import WeatherConfig from "./Sections/WeatherConfig";
 import UserConfig from "./Sections/userConfig";
 import ConfigButton from "./ButtonConfig";
 import Section from "./Sections/Section";
+import { useMobile } from "../../Hooks/useMobile";
 
 interface ConfigProps {
   Submit: (e: any) => void;
@@ -13,16 +14,17 @@ export default function Config({ Submit, onWeatherSubmit }: ConfigProps) {
   // Theme state
   const [state, setState] = useState(true);
   const DropdownClass = state ? "hidden" : "block";
+  const isMobile = useMobile()
   return (
-    <div className="relative left-0.5 top-0 w-60 rounded-2xl m-4 select-none max-md:hidden">
+    <div className="relative left-0.5 top-0 w-60 rounded-2xl m-4 select-none max-md:w-12">
       <div
         className="flex items-center px-3 py-3 rounded-lg cursor-pointer subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0"
         onClick={() => setState(!state)}
       >
         <span className="text-lg font-bold">
-          <i className="bx bxs-cog"></i>&nbsp;Configuration
+          <i className="bx bxs-cog"></i>{!isMobile ? <span>&nbsp;Configuration</span> : null}
         </span>
-        <ul className={`background-crust/50 text h-84 overflow-y-auto absolute top-full right-0 mt-1 rounded-lg p-2 w-96 ${DropdownClass} z-50 shadow-lg`} >
+        <ul className={`background-crust/25 text h-84 overflow-y-auto absolute top-full right-0 mt-1 rounded-lg p-2 w-96 ${DropdownClass} z-50 shadow-lg`} >
           <Section title="Weather Config">
             <WeatherConfig onWeatherSubmit={onWeatherSubmit} />
           </Section>

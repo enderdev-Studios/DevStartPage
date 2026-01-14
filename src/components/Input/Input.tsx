@@ -20,8 +20,8 @@ export default function Input() {
   
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full select-none mr-4">
-      <div className="flex items-center w-full max-w-2xl">
+    <div className="inputContainer">
+      <div className="itemsContainer">
         
         <DropDown setSearchEngine={setSearchEngine} SearchEngine={SearchEngine}/>
         <input

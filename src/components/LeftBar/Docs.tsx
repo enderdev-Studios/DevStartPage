@@ -1,6 +1,7 @@
 import { useState, } from "react";
 import { DefaultDocs, LocalStorageKeys, } from "../../constants/constants";
 import Links from "./Links";
+import { useMobile } from "../../Hooks/useMobile";
 
 export default function Docs({ }) {
   const [state, setState] = useState(true);
@@ -50,18 +51,18 @@ export default function Docs({ }) {
     updateDocs(UpdatedDocs);
     window.localStorage.setItem(LocalStorageKeys.Docs, JSON.stringify(UpdatedDocs));
   }
-
+  const isMobile = useMobile()
   return (
-    <div className="relative left-0.5 top-0 w-68 rounded-2xl m-4 select-none max-md:hidden">
+    <div className="relative left-0.5 top-0 w-72 rounded-2xl m-4 select-none max-md:w-auto max-md:m-2">
       <div
-        className="flex items-center subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 px-3 py-3 rounded-lg cursor-pointer "
+        className="flex items-center subtext-1 surface-0 dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 px-3 py-3 rounded-lg cursor-pointer max-md:px-2 max-md:py-2"
         onClick={() => setState(!state)}
       >
-        <span className="text-lg">
-          <i className="bx bxs-book-open"></i>&nbsp;Docs
+        <span className="text-lg max-md:text-base">
+          <i className="bx bxs-book-open"></i>{!isMobile ? <span> &nbsp; Docs </span> : null}
         </span>
         <ul
-          className={`h-84 overflow-y-auto absolute top-full left-0 mt-1 background-crust rounded-lg p-2  ${DropdownClass}`}
+          className={`h-auto max-h-96 overflow-y-auto z-50 absolute top-full left-0 mt-1 background-crust rounded-lg p-2 min-w-[200px] max-md:min-w-[180px] ${DropdownClass}`}
         >
           {docs.map((doc: any, index: any) => (
             <Links key={index} name={doc.name} url={doc.url} Onclick={(e: any) => deleteDoc(e, index)}/>

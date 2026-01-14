@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @tailwind utilities;
 @import "./theme.css";
+@import "./input.css";
 
 
 
