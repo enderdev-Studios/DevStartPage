@@ -9,7 +9,7 @@ export default function UserConfig({ onSubmit }: { onSubmit: (e: any) => void })
 
   return (
     <li className="w-full text-left p-1 rounded mt-1">
-      <form className="flex flex-col m-3" onSubmit={(e) => onSubmit(e)}>
+      <form className="m-3" onSubmit={(e) => onSubmit(e)}>
         <input
           type="text"
           name="username"

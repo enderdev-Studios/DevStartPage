@@ -26,8 +26,8 @@ export default function Input() {
         <DropDown setSearchEngine={setSearchEngine} SearchEngine={SearchEngine}/>
         <input
           type="text"
-          className="flex-1 focus:outline-0  p-2 py-3 rounded-r-3xl surface-0 h-12 text"
-          placeholder="🔎   Search or type a URL"
+          className="flex-1 focus:outline-0  p-2 py-3 rounded-r-3xl surface-0 h-12 text max-md:placeholder:text-xs max-md:placeholder:font-bold"
+          placeholder="🔎  Search or type a URL"
           onKeyDown={OnkeyDown}
         />
       </div>

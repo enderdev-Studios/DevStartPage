@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @tailwind utilities;
 @import "./theme.css";
-@import "./Input.css";
+@import "./input.css";
 
 
 
@@ -16,21 +16,21 @@ ul::-webkit-scrollbar {
 }
 
 ul::-webkit-scrollbar-thumb {
-    background: transparent;
+    background: var(--color-blue-latte-0);
     border-radius: 8px;
 }
 
 ul::-webkit-scrollbar-track {
-    background: #202230;
+    background: var(--color-surface-latte-0);
     border-radius: 8px;
 }
 
 .dark ul::-webkit-scrollbar-thumb {
-    background: #232324;
+    background: var(--color-blue-mocha-0);
 }
 
 .dark ul::-webkit-scrollbar-track {
-    background: #60606d;
+    background: var(--color-surface-mocha-0);
 }
 
 

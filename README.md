@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/IconSvg.svg" alt="Dev New Tab Logo" width="128"/>
+    <img src="./public/iconSvg.svg" alt="Dev New Tab Logo" width="128"/>
     <h3><a href="https://dev-start-page.vercel.app/">Dev New Tab</a></h3>
     <p>A customizable start page for developers.</p>
     <img src="https://img.shields.io/github/stars/enderdev-Studios/DevStartPage?style=social" alt="GitHub stars"/>

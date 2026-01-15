@@ -42,7 +42,7 @@ function App() {
           <Welcome city={location}>{user}</Welcome>
         </div>
 
-        <div className="absolute top-4 right-4 flex items-center gap-2">
+        <div className="absolute top-4 right-4 flex items-center w-fit gap-2">
           <ChangeTheme />
           <Config Submit={onSubmit} onWeatherSubmit={onWeatherSubmit} />
         </div>

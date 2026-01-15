@@ -41,15 +41,16 @@ export default function WeatherConfig({ onWeatherSubmit }: WeatherConfigProps) {
 
   return (
     <li className="w-full text-left p-1 rounded mt-1">
-      <form className="flex flex-col m-3" onSubmit={handleSubmit}>
-        <label className="text-lg">Find Location</label>
-        <input type="text" name="city" placeholder="Paris, Madrid, Buenos Aires" className="mb-2 p-2 rounded focus:border-b-2 focus:border-[#7c7f93] outline-0" required value={location}
+      <form className="m-3" onSubmit={handleSubmit}>
+        <label className="text-lg max-md:text-sm">Find Location</label>
+        <br /> <br />
+        <input type="text" name="city" placeholder="Paris, Madrid, Buenos Aires" className="mb-2 p-2 rounded focus:border-b-2 focus:border-[#7c7f93] outline-0 max-md:placeholder:text-sm" required value={location}
           onChange={(e) => setLocation(e.target.value)}
           onClick={handleInputClick}
           autoComplete="off"
         />
         <ConfigButton props={{ onClick: handleGetLocation, itemType: "button" }}>
-          Get From Device Location
+          From Device Location
         </ConfigButton>
         <ConfigButton props={{ onClick: handleGetLocation, itemType: "submit" }}>
           Submit
