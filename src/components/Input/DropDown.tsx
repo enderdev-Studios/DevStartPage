@@ -14,9 +14,9 @@ export default function DropDown({ setSearchEngine, SearchEngine }: { setSearchE
                 <ul className={`dropmenu ${DropdownClass}`}>
                     <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Google")}>{!isMobile ? <i className='bx bxl-google' >&nbsp;</i> : null}Google</button></li>
                     <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Bing")}>{!isMobile ? <i className='bx bxl-bing' >&nbsp;</i> : null}Bing</button></li>
-                    <li><button className="engine max-md:text-xs" onClick={() => setSearchEngine("DuckDuckGo")}><DuckSvg />DuckDuckGo</button></li>
+                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("DuckDuckGo")}>{!isMobile ? <span><DuckSvg></DuckSvg></span> : null}DuckDuckGo</button></li>
                     <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Yahoo")}>{!isMobile ? <i className='bx bxl-yahoo' >&nbsp;</i> : null} Yahoo</button></li>
-                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Ecosia")}><EcosiaSVG />&nbsp;Ecosia</button></li>
+                    <li><button className="engine max-md:text-sm" onClick={() => setSearchEngine("Ecosia")}>{!isMobile ? <span><EcosiaSVG></EcosiaSVG></span> : null}&nbsp;Ecosia</button></li>
                 </ul>
             </div>
         </div>

@@ -6,13 +6,13 @@
         @apply dark:hover:bg-overlay-mocha-0 hover:bg-overlay-latte-0 py-3.5 px-4 cursor-pointer rounded-xl font-bold;
     }
     .dropdownEngines {
-        @apply flex items-center  px-3 py-3 max-md:py-0 rounded-l-lg cursor-pointer dark:hover:outline-gray-300 hover:outline-gray-600 hover:outline-1;
+        @apply flex items-center px-3 py-3 max-md:py-0 rounded-l-lg cursor-pointer dark:hover:outline-gray-300 hover:outline-gray-600 hover:outline-1;
     }
     .engine {
-        @apply w-full text-left p-1 rounded flex items-center gap-2 ;
+        @apply w-full text-left p-1 rounded flex items-center gap-2 cursor-pointer bg-mantle-latte dark:bg-mantle-mocha mt-1;
     }
     .dropmenu {
-        @apply absolute top-full left-0 mt-1 dark:bg-[#11111b] dark:text-[#cdd6f4] text-[#4c4f69] bg-[#dce0e8] rounded-lg p-2 w-full z-50 shadow-lg;
+        @apply absolute top-full left-0 mt-1 dark:bg-crust-mocha dark:text-text-mocha-0 text-text-latte-0 bg-crust-latte rounded-lg p-2 w-40 z-50 shadow-lg max-md:w-28;
     }
     .inputContainer {
         @apply flex flex-col items-center justify-center w-full h-full select-none mr-4;
