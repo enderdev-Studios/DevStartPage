@@ -1,50 +1,43 @@
+
 import Config from "./components/Config/ConfigMenu"
 import ShortCuts from "./components/Input/ShortCuts"
 import Input from "./components/Input/Input"
 import Docs from "./components/LeftBar/Docs"
 import Welcome from "./components/LeftBar/Welcome"
-import { useState } from "react"
-import { LocalStorageKeys } from "./constants/constants"
 import ChangeTheme from "./components/Input/ChangeTheme"
+import { useImage, useUser, useWeather } from "./functions/Submits"
+import { useEffect } from "react"
+import { UrlCheck } from "./functions/functions"
 
 function App() {
-  const [user, SetUsername] = useState(() => {
-    const storedUsername = localStorage.getItem("username");
-    return storedUsername ? storedUsername : "user";
-  });
 
-  const [location, setLocation] = useState(() => {
-    const storedLocation = localStorage.getItem(LocalStorageKeys.Weather);
-    return storedLocation ? storedLocation : "Madrid";
-  });
+  // Change Photo
+  const userConfig = useUser()
+  const weatherConfig = useWeather()
+  const imgConfig = useImage()
 
-  const onSubmit = (e: any) => {
-    e.preventDefault();
-    const { username } = e.target as HTMLFormElement
-    if (!username || !(username as any).value) {
-      return;
-    }
-    SetUsername((username as any).value);
-    window.localStorage.setItem(LocalStorageKeys.username, username.value);
-    return (e.target as HTMLFormElement).reset()
-  }
-
-  const onWeatherSubmit = (location: string) => {
-    setLocation(location);
-    localStorage.setItem(LocalStorageKeys.Weather, location);
-  };
+  useEffect(() => {
+    const bodyElement = document.body;
+    const image = UrlCheck(imgConfig.state) ? String(imgConfig.state) : "";
+    bodyElement.style.backgroundImage = image ? `url("${image}")` : "none";
+    bodyElement.style.backgroundPosition = image ? "center" : "";
+    bodyElement.style.backgroundPositionY = image ? "bottom -17rem" : "";
+    bodyElement.style.backgroundRepeat = image ? "no-repeat" : "";
+    bodyElement.style.backgroundSize = image ? "cover" : "";
+  }, [imgConfig.state])
+  
 
   return (
     <>
       <div className="m-4 mb-12">
         <div className="flex items-center space-x-2 px-3 py-1 rounded-full w-fit ">
           <Docs></Docs>
-          <Welcome city={location}>{user}</Welcome>
+          <Welcome city={weatherConfig.state}>{userConfig.state}</Welcome>
         </div>
 
         <div className="absolute top-4 right-4 flex items-center w-fit gap-2">
           <ChangeTheme />
-          <Config Submit={onSubmit} onWeatherSubmit={onWeatherSubmit} />
+          <Config Submit={userConfig.Submit} onWeatherSubmit={weatherConfig.Submit} onImageSubmit={imgConfig.Submit} />
         </div>
       </div>
       <div className="m-16 mt-20">

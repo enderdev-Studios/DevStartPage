@@ -1,16 +1,18 @@
 import { useState } from "react";
 import WeatherConfig from "./Sections/WeatherConfig";
 import UserConfig from "./Sections/userConfig";
-import ConfigButton from "./ButtonConfig";
 import Section from "./Sections/Section";
 import { useMobile } from "../../Hooks/useMobile";
+import BackgroundImg from "./Sections/BackgroundImage";
+import ConfigButton from "./ButtonConfig";
 
 interface ConfigProps {
   Submit: (e: any) => void;
   onWeatherSubmit: (location: string) => void;
+  onImageSubmit: (e: any) => void;
 }
 
-export default function Config({ Submit, onWeatherSubmit }: ConfigProps) {
+export default function Config({ Submit, onWeatherSubmit, onImageSubmit }: ConfigProps) {
   // Theme state
   const [state, setState] = useState(true);
   const DropdownClass = state ? "hidden" : "block";
@@ -31,12 +33,17 @@ export default function Config({ Submit, onWeatherSubmit }: ConfigProps) {
           <Section title="Username">
             <UserConfig onSubmit={Submit} />
           </Section>
+          <Section title="Background Image">
+            <div className="m-2">
+              <BackgroundImg  onSubmit={onImageSubmit}/>
+            </div>
+          </Section>
           <Section title="Cache Data">
             <div className="m-2">
               <ConfigButton props={{ onClick: () => { window.localStorage.clear() } }}> Reset All</ConfigButton>
-
             </div>
           </Section>
+          
         </ul>
       </div>
     </div>

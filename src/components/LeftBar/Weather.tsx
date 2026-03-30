@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchWeather } from '../../constants/functions';
+import { fetchWeather } from '../../functions/functions';
 import WeatherImage from './WeatherImage';
 
 export default function WeatherWidget({ city }: { city: string }) {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SearchEngines } from "../../constants/constants";
-import { UrlCheck } from "../../constants/functions";
+import { UrlCheck } from "../../functions/functions";
 import DropDown from "./DropDown";
 
 export default function Input() {
