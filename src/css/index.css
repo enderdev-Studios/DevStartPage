@@ -39,6 +39,9 @@ ul::-webkit-scrollbar-track {
 /* Light -> Catpuccin Latte */
 
 @layer utilities {
+    .background-simple {
+        @apply bg-cover dark:bg-base-mocha bg-base-latte overflow-hidden;
+    }
     .background-base {
         @apply dark:bg-base-mocha bg-base-latte;
     }
