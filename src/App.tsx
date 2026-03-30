@@ -21,9 +21,14 @@ function App() {
     const image = UrlCheck(imgConfig.state) ? String(imgConfig.state) : "";
     bodyElement.style.backgroundImage = image ? `url("${image}")` : "none";
     bodyElement.style.backgroundPosition = image ? "center" : "";
-    bodyElement.style.backgroundPositionY = image ? "bottom -17rem" : "";
+    bodyElement.style.backgroundPositionY = image ? "top" : "";
     bodyElement.style.backgroundRepeat = image ? "no-repeat" : "";
     bodyElement.style.backgroundSize = image ? "cover" : "";
+    if (image) {
+      bodyElement.classList.remove("background-simple")
+    } else {
+      bodyElement.classList.add("background-simple")
+    }
   }, [imgConfig.state])
   
 
